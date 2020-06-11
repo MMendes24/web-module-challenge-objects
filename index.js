@@ -29,11 +29,10 @@ For example, burger.discount("teacher") would return 13.5 and burger.discount("p
 burger.discount = function(discount){
   if (discount === 'teacher'){
     console.log((burger.price - (burger.price * .25)))
-  } else if 
-    (discount === 'student') {
+  } else if (discount === 'student') {
     console.log((burger.price - (burger.price * .25)))
     } else {
-    console.log((burger.price - (burger.price * .10)))
+      console.log((burger.price - (burger.price * .10)))
     }
 }
 
@@ -106,10 +105,17 @@ function getLastReview(reviews) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+function getReviewByRating(array, number) {
+  const ratingsArray = []
+  for(let i = 0; i < array.length; i++){
+    if (Math.floor(array[i].rating) === number) {
+      ratingsArray.push(reviews[i]);
+    } 
   }
+  console.log(ratingsArray)
+ }
 
+getReviewByRating(reviews,4)
   
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words. 
   
