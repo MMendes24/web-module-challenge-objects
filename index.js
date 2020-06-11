@@ -139,8 +139,6 @@ function getLongReviews(array){
   console.log(newArray)
 }
 
-getLongReviews(reviews)
-
 /* STRETCH 3:  This challenge is not related to the data above! 
 
 Write a function called carMarker 
@@ -158,8 +156,11 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(odometer){
+  return {
+    odometer,
+    drive: function(distance){
+      return this.odometer = this.odometer + distance;
+    }
+  }
 }
